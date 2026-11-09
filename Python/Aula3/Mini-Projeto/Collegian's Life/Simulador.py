@@ -323,15 +323,6 @@ class Simulacao:
             print(f"Fim do período! Status final: {self.status}")
 
 
-# ---------- testes ----------
-class SimulacaoNota5(Simulacao):
-    """Só pra teste: toda prova tira 5."""
-
-    def fazer_prova(self, nota_fixa=5):
-        self.notas.append(nota_fixa)
-        return nota_fixa
-
-
 def rodar_12_semanas(sim):
     for _ in range(12):
         sim.avancar_semana()
@@ -342,13 +333,3 @@ def rodar_12_semanas(sim):
 # Rodar o code
 if __name__ == "__main__":
     Simulacao(Jogador()).jogar()
-
-
-# print("Teste 1: jogador rico, nivel 6 (esperado: Vitória, semana 12, dinheiro 9340)")
-# rodar_12_semanas(Simulacao(Jogador(dinheiro=10000, nivel=6)))
-
-# print("Teste 2: jogador sem fazer nada (esperado: derrota por contas, semana 8, UMA mensagem)")
-# rodar_12_semanas(Simulacao(Jogador()))
-
-# print("Teste 3: jogador rico, nivel 1 (esperado: derrota por média)")
-# rodar_12_semanas(SimulacaoNota5(Jogador(dinheiro=10000, nivel=1)))
