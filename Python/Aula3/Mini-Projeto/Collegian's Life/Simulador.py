@@ -280,11 +280,13 @@ class Simulacao:
         print(f"{opcao_extra}. Avançar semana")
         print(f"{opcao_extra + 1}. Mostrar estado atual")
         print(f"{opcao_extra + 2}. Sair do jogo")
+        print("")  
 
     def ler_opcao(self):
         while True:
             try:
                 opcao = int(input("Digite o número da opção desejada: "))
+                print("")
                 if 1 <= opcao <= len(self.atividades) + 3:
                     return opcao
                 else:
